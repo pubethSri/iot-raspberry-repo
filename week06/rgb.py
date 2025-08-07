@@ -12,8 +12,8 @@ GPIO.setup(GREEN, GPIO.OUT)
 
 while True:
     GPIO.output(RED, True)
-    GPIO.output(BLUE, True)
-    GPIO.output(GREEN, True)
+    GPIO.output(BLUE, False)
+    GPIO.output(GREEN, False)
     time.sleep(0.5)
     GPIO.output(RED, False)
     GPIO.output(BLUE, False)
