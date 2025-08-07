@@ -10,4 +10,7 @@ GPIO.setup(17, GPIO.IN)
 
 while True:
     val = GPIO.input(17)
-    print(val)
+    if val == 1:
+        GPIO.output(LIGHT, False)
+    else:
+        GPIO.output(LIGHT, True)
