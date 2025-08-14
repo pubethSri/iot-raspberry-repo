@@ -1,7 +1,7 @@
 import time
 import spidev
 
-spi = spidev.Spidev()
+spi = spidev.SpiDev()
 spi.open(0, 0)
 
 def ReadChannel(channel):
