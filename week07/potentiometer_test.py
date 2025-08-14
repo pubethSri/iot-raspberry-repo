@@ -23,9 +23,10 @@ def ReadChannel(channel):
 while True:
     for i in range(8):
         reading = ReadChannel(i)
-        duty = max(100, reading / 1.27)
+        duty = min(100, reading / 1.27)
         pi_pwm.ChangeDutyCycle(duty)
         print("Reading=%d" % (reading))
+        print("Duty=%d" % (duty))
         
         time.sleep(0.5)
 
