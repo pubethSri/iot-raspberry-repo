@@ -1,19 +1,6 @@
 import RPi.GPIO as GPIO
 import time
 
-RED = 23
-BLUE = 24
-GREEN = 25
-
-GPIO.setup(RED, GPIO.OUT)
-GPIO.setup(BLUE, GPIO.OUT)
-GPIO.setup(GREEN, GPIO.OUT)
-
-def rgb(red, green, blue):
-    GPIO.output(RED, red)
-    GPIO.output(BLUE, green)
-    GPIO.output(GREEN, blue)
-
 KEYPAD = [
     [1, 2, 3, 'A'],
     [4, 5, 6, 'B'],
@@ -56,20 +43,6 @@ try:
 
         if pressed_key is not None:
             print(f"Pressed: {pressed_key}")
-            if (pressed_key == 1):
-                rgb(False, True, True)
-            elif (pressed_key == 2):
-                rgb(True, False, True)
-            elif (pressed_key == 3):
-                rgb(True, True, False)
-            elif (pressed_key == 4):
-                rgb(False, False, True)
-            elif (pressed_key == 5):
-                rgb(False, True, False)
-            elif (pressed_key == 6):
-                rgb(True, False, False)
-            elif (pressed_key == 7):
-                rgb(False, False, False)
         time.sleep(0.1)
 
 except KeyboardInterrupt:
