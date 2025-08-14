@@ -1,14 +1,6 @@
 import RPi.GPIO as GPIO
 import time
 
-RED = 23
-BLUE = 24
-GREEN = 25
-
-GPIO.setup(RED, GPIO.OUT)
-GPIO.setup(BLUE, GPIO.OUT)
-GPIO.setup(GREEN, GPIO.OUT)
-
 def rgb(red, green, blue):
     GPIO.output(RED, red)
     GPIO.output(BLUE, green)
@@ -25,6 +17,14 @@ ROWS = [4, 17, 27, 22]
 COLS = [5, 6, 13, 19]
 
 GPIO.setmode(GPIO.BCM)
+
+RED = 23
+BLUE = 24
+GREEN = 25
+
+GPIO.setup(RED, GPIO.OUT)
+GPIO.setup(BLUE, GPIO.OUT)
+GPIO.setup(GREEN, GPIO.OUT)
 
 for row_pin in ROWS:
     GPIO.setup(row_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
