@@ -12,7 +12,10 @@ def ReadChannel(channel):
     return data
 
 while True:
-    reading = ReadChannel(0)
-    voltage = reading * 3.3 / 4096
-    print("Reading=%d\t Voltage=%f" % (reading, voltage))
-    time.sleep(1)
+    # reading = ReadChannel(0)
+    # voltage = reading * 3.3 / 4096
+    # print("Reading=%d\t Voltage=%f" % (reading, voltage))
+    for i in range(8):
+        print('ADC[{}]: {:.2f}'.format(i, ReadChannel(i)))
+    
+    time.sleep(0.2)
