@@ -21,10 +21,11 @@ def ReadChannel(channel):
     return data
 
 while True:
-    reading = ReadChannel(0)
-    duty = reading / 1.27
-    
-    time.sleep(0.5)
+    for i in range(8):
+        reading = ReadChannel(i)
+        duty = reading / 1.27
+        
+        time.sleep(0.5)
 
 
 
