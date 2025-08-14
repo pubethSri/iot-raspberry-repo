@@ -47,7 +47,7 @@ def get_key():
                     time.sleep(0.05)
 
         GPIO.output(col_pin, GPIO.HIGH)
-    
+
     return key
 
 try:
