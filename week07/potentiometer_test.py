@@ -3,6 +3,7 @@ import spidev
 
 spi = spidev.SpiDev()
 spi.open(0, 0)
+spi.max_speed_hz = 500000
 
 def ReadChannel(channel):
     adc = spi.xfer2([6 | (channel & 4) >> 2, (channel & 3) << 6, 0])
