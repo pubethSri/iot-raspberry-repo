@@ -29,12 +29,14 @@ def read_thermistor(channel):
     tempC = tempK - 273.15
     return tempC
 
-# --- MCP9700 ---
+--- MCP9700 ---
 def read_mcp9700(channel):
     adc_val = ReadChannel(channel)
     Vout = adc_val * Vref / 4095
+    print("Raw Vout = %.3f V" % Vout)
     tempC = (Vout - 0.5) / 0.01
     return tempC
+
 
 while True:
     # temp_ntc = read_thermistor(0)   # assume thermistor on CH0
