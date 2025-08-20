@@ -1,14 +1,5 @@
 import time
 import spidev
-import RPi.GPIO as GPIO
-
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BOARD)
-ledpin = 12
-
-GPIO.setup(ledpin, GPIO.OUT)
-pi_pwm = GPIO.PWM(ledpin, 1000)
-pi_pwm.start(0)
 
 spi = spidev.SpiDev()
 spi.open(0, 0)
@@ -21,21 +12,15 @@ def ReadChannel(channel):
     return data
 
 while True:
-    for i in range(8):
-        reading = ReadChannel(i)
-        duty = min(100, reading / 1.27)
-        pi_pwm.ChangeDutyCycle(duty)
-        print("Reading=%d" % (reading))
-        print("Duty=%d" % (duty))
-        
-        time.sleep(0.5)
-
-
-
-
-    # 
     # for i in range(8):
-    #     print('ADC[{}]: {:.2f}'.format(i, ReadChannel(i)))
+    #     reading = ReadChannel(i)
+    #     duty = min(100, reading / 1.27)
+    #     pi_pwm.ChangeDutyCycle(duty)
+        
+    
+    for i in range(8):
+        print('ADC[{}]: {:.2f}'.format(i, ReadChannel(i)))
+    time.sleep(0.5)
 
     
     
