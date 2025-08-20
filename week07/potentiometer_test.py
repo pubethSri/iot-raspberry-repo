@@ -23,7 +23,7 @@ def ReadChannel(channel):
 
 while True:
     for i in range(8):
-        temp = []
+        temp = [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]
         reading = ReadChannel(0)
         voltage = reading * 3.3 / 4096
         forduty = reading / 2.55
