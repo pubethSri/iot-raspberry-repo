@@ -22,11 +22,14 @@ def ReadChannel(channel):
     return data
 
 while True:
-    reading = ReadChannel(0)
-    voltage = reading * 3.3 / 4096
-    forduty = reading / 2.55
-    print("Reading=%d\t Voltage=%f\t Forduty=%f" %(reading, voltage, forduty))
-    pi_pwm.ChangeDutyCycle(forduty) 
+    for i in range 8:
+        temp = []
+        reading = ReadChannel(0)
+        voltage = reading * 3.3 / 4096
+        forduty = reading / 2.55
+        temp[i] = forduty
+    print("Reading=%d\t Voltage=%f\t Forduty=%f" %(reading, voltage, min(temp)))
+    pi_pwm.ChangeDutyCycle(min(temp))
 
     time.sleep(0.5)
 
