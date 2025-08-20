@@ -21,14 +21,15 @@ def ReadChannel(channel):
 
     return data
 
-while True:
-    reading = ReadChannel(0)
-    voltage = reading * 3.3 / 4096
-    forduty = reading / 2.55
-    print("Reading=%d\t Voltage=%f\t Forduty=%f" %(reading, voltage, forduty))
-    pi_pwm.ChangeDutyCycle(forduty) 
+try:
+    while True:
+        reading = ReadChannel(0)
+        voltage = reading * 3.3 / 4096
+        forduty = reading / 2.55
+        print("Reading=%d\t Voltage=%f\t Forduty=%f" %(reading, voltage, forduty))
+        pi_pwm.ChangeDutyCycle(forduty) 
 
-    time.sleep(2)
+        time.sleep(2)
 
 except KeyboardInterrupt:
     GPIO.cleanup()
