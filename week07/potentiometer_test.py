@@ -13,14 +13,9 @@ def ReadChannel(channel):
     return data
 
 while True:
-    # for i in range(8):
-    #     reading = ReadChannel(i)
-    #     duty = min(100, reading / 1.27)
-    #     pi_pwm.ChangeDutyCycle(duty)
-        
-    
-    for i in range(8):
-        print('ADC[{}]: {:.2f}'.format(i, ReadChannel(i)))
+    reading = ReadChannel(0)
+    voltage = reading * 3.3 / 4096
+    print("Reading=%d\t Voltage=%f" %(reading, voltage)) 
     time.sleep(0.5)
 
     
