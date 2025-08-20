@@ -39,9 +39,9 @@ def read_mcp9700(channel):
 
 
 while True:
-    # temp_ntc = read_thermistor(0)   # assume thermistor on CH0
+    temp_ntc = read_thermistor(1)   # assume thermistor on CH0
     temp_mcp = read_mcp9700(0)      # assume MCP9700 on CH1
 
-    print("MCP9700: %.2f °C" % (temp_mcp))
-    # print("Thermistor: %.2f °C\t MCP9700: %.2f °C" % (temp_ntc, temp_mcp))
+    # print("MCP9700: %.2f °C" % (temp_mcp))
+    print("Thermistor: %.2f °C\t MCP9700: %.2f °C" % (temp_ntc, temp_mcp))
     time.sleep(1)
