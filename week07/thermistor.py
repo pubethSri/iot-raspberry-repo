@@ -29,7 +29,7 @@ def read_thermistor(channel):
     tempC = tempK - 273.15
     return tempC
 
---- MCP9700 ---
+# --- MCP9700 ---
 def read_mcp9700(channel):
     adc_val = ReadChannel(channel)
     Vout = adc_val * Vref / 4095
