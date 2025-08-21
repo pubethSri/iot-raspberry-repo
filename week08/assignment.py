@@ -16,7 +16,7 @@ backlight_enabled=True
 )
 
 while True:
-    bus.i2c_wr(0x44[0x2C, 0x06])
+    bus.i2c_wr(0x44, [0x2C, 0x06])
     time.sleep(0.5)
     msg = bus.i2c_rd(0x44, 6)
     data = bytes(msg)
