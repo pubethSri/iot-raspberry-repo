@@ -26,8 +26,8 @@ while True:
     cTemp = -45 + (175 * temp / 65535.0)
     humidity = 100 * (data[3] * 256 + data[4]) / 65535.0
     
-    str_temp = "Temperature in Celsius is : " + str(cTemp) + " C"
-    str_humid = "Relative Humidity is : " + str(humidity) + " %%RH"
+    str_temp = "Temp: " + str(cTemp) + " C"
+    str_humid = "Humid: " + str(humidity) + " %RH"
     
     lcd.write_string(str_temp)
     lcd.crlf()
