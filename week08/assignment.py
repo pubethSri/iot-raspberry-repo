@@ -31,8 +31,8 @@ while True:
     
     lcd.clear()
     lcd.write_string(str_temp)
-    lcd.crlf()
-    lcd.write_string(str_humid)
+    # lcd.crlf()
+    # lcd.write_string(str_humid)
     
     time.sleep(3)
     
