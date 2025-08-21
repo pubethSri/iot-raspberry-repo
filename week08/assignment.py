@@ -26,13 +26,13 @@ while True:
     cTemp = -45 + (175 * temp / 65535.0)
     humidity = 100 * (data[3] * 256 + data[4]) / 65535.0
     
-    str_temp = "Temp: " + str(cTemp) + " C"
+    str_temp = "Temp: " + str(round(cTemp, 2)) + " C"
     str_humid = "Humid: " + str(round(humidity, 2)) + " %RH"
     
     lcd.clear()
     lcd.write_string(str_temp)
-    # lcd.crlf()
-    # lcd.write_string(str_humid)
+    lcd.crlf()
+    lcd.write_string(str_humid)
     
     time.sleep(3)
     
