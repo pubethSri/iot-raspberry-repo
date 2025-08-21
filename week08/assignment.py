@@ -34,3 +34,5 @@ while True:
     lcd.write_string(str_humid)
     
     time.sleep(3)
+    
+    lcd.clear()
