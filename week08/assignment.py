@@ -29,10 +29,11 @@ while True:
     str_temp = "Temp: " + str(cTemp) + " C"
     str_humid = "Humid: " + str(round(humidity, 2)) + " %RH"
     
+    lcd.clear()
     lcd.write_string(str_temp)
     lcd.crlf()
     lcd.write_string(str_humid)
     
     time.sleep(3)
     
-    lcd.clear()
+    
